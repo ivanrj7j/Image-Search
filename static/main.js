@@ -16,12 +16,15 @@ searchBar.addEventListener('focus', ()=>{
 
 searchBar.addEventListener('keydown', (e)=>{
     if(e.key == "Enter"){
-        if(!isURL(searchURL)){
+        if(isURL(searchURL)){
             urlSearch(searchURL);
+        }else{
+            alert("The url must be a valid image url with png, jpeg, jpg accepted")
         }
     }
 });
 
-const urlSearch = (url) =>{
+
+const urlSearch = (url)=>{
     console.log("Yet to be implemented")
 }
