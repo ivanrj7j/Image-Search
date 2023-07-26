@@ -17,7 +17,7 @@ searchBar.addEventListener('focus', ()=>{
 searchBar.addEventListener('keydown', (e)=>{
     if(e.key == "Enter"){
         if(!isURL(searchURL)){
-            urlSearch();
+            urlSearch(searchURL);
         }
     }
 });
