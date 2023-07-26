@@ -2,7 +2,7 @@
 
 ![Image Search App](app_screenshot.png)
 
-**Note: This project is an experimental endeavor and serves as Part 2 of another project named 'Similar-vehicles'. You can find the first part of the project at [https://github.com/ivanrj7j/Similar-vehicles](https://github.com/ivanrj7j/Similar-vehicles).**
+**Note: This project is an experimental endeavor and serves as Part 2 of another project named 'Similar-vehicles'. You can find the first part of the project at [Similar-vehicles](https://github.com/ivanrj7j/Similar-vehicles).**
 
 This is a Flask web application that allows users to perform image searches using a custom algorithm. Users can upload an image or provide a URL, and the application will find similar images from the provided dataset.
 
