@@ -12,6 +12,7 @@ This is a Flask web application that allows users to perform image searches usin
   - [Forking the Repository](#forking-the-repository)
 - [How the Algorithm Works](#how-the-algorithm-works)
 - [Resources Used](#resources-used)
+- [**Limitations**](#limitations)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
@@ -52,6 +53,32 @@ The following technologies and resources were used in the development of this ap
 - Frontend: JavaScript
 - User Interface: Bootstrap
 - AI Related: TensorFlow
+
+## Limitations
+
+This project comes with many limitations, the biggest limitation being the data the model is trained on, this model is trained on database of images of vehicles of 5 classes. Since the model is really small and made for a specific need, the application only works for images of vehicles.
+
+The second limitaion is that since this project is to test my theory on learning features about images using machine learning and using that to find similar images, I didnt really gave in effort for optimizing. The application can only have 2564 images, this is because all the vectors are pre stored. So adding or removing images will mess up the image search.
+
+I know I can use vector databases to make the thing easy, but I don't have time for that, maybe someday!
+
+## Usage
+
+After forking the repository, paste all your images of vehicles inside the `static/imageDB` directory.
+
+Load `model.h5` file using `tensorflow.keras.models.load_model` method and then pass through all the images in your directory through the model, make sure the image is resized to `(256, 256)` and the image is in `RGB` mode and then stack them together. The resulting vector will be in the shape `(number_of_images, 256, 256, 3)` after stacking them together and after passing them through the model, it will be in the shape `(number_of_images, 64)`.
+
+```
+You can refer to vectorizeImage.ipynb to do this.
+```
+
+Save the resultant vector to `static/imageDB.vtr.npy`
+
+After this is done run 
+
+```bash
+python app.py
+```
 
 ## Contributing
 
