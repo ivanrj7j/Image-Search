@@ -20,7 +20,9 @@ def findSimilarImages(representation:np.ndarray):
     imageSimilarity = list(zip(imageList, similarityVector))
     rankedImages =  sorted(imageSimilarity, key=lambda x: x[1], reverse=True)[:99]
 
-    return ['/static/imageDB/'+img[0] for img in rankedImages]
+    rankedImagePaths =  ['/static/imageDB/'+img[0] for img in rankedImages]
+
+    return [rankedImagePaths[i:i + 3] for i in range(0, len(rankedImagePaths), 3)]
 
 @app.route('/')
 def hello():
